@@ -1,32 +1,29 @@
 import React, { useState, useEffect } from 'react'
-import { sortBy } from "./sort-util";
 import PropTypes from 'prop-types';
+import {sorter} from "./sorter";
 
-const Sorter = (props) => {
+const Sort = (props) => {
     const [sortedData, setSortedData] = useState([]);
     const dataToSort = props.options;
-    const sortByOption1 = props.by1;
-    const sortByOption2 = props.by2;
 
     useEffect(() => {
-        const result = dataToSort.sortBy(function (o) { return [o[sortByOption1], o[sortByOption2]] });
+        const result= sorter(props.options , props.sortByOptions );
         setSortedData([...result]);
     }, [dataToSort]);
 
     const sortByName = () => {
-        const result = dataToSort.sortBy(function (o) { return o.name });
+        const result = sorter(props.options , ["name"] );
         setSortedData([...result]);
     }
 
     const sortById = () => {
-        const resultById = dataToSort.sortBy(function (o) { return o.id });
-        setSortedData([...resultById]);
+        const result = sorter(props.options , ["id"] );
+        setSortedData([...result]);
     }
 
     const sortByPrice = () => {
-       
-        const resultByPrice = dataToSort.sortBy(function (o) { return -o.price });
-        setSortedData([...resultByPrice]);
+        const result = sorter(props.options , ["price"] );
+        setSortedData([...result]);
     }
 
     return (
@@ -70,15 +67,15 @@ const Sorter = (props) => {
     )
 }
 
-Sorter.propTypes = {
+Sort.propTypes = {
     options: PropTypes.array
 };
 
-Sorter.defaultProps = {
+Sort.defaultProps = {
     options: []
 }
 
-export default Sorter
+export default Sort
 
 
 

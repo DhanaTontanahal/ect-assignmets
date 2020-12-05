@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Repeater from "./components/assigment-2/Repeater/Repeater";
-import Sorter from "./components/assigment-1/Sorter/Sorter"
+import Sort from "./components/assigment-1/Sorter/Sort"
 
 const App = () => {
   const data = [{ id:1001 , name: 'A' }, { id:1002 , name: 'B' }, {id:1003 , name: 'C' }];
@@ -27,7 +27,7 @@ const App = () => {
       </div>
       <div>
         <h4>Sorter </h4>
-        <Sorter options={stocks} by1={"price"} by2={"id"}></Sorter>
+        <Sort options={stocks} sortByOptions={["price" , "id"]}></Sort>
       </div>
     </React.Fragment>
 
