@@ -27,7 +27,7 @@ const App = () => {
       </div>
       <div>
         <h4>Sorter </h4>
-        <Sort options={stocks} sortByOptions={["price" , "id"]}></Sort>
+        <Sort options={stocks}  sortByOptions={["-price"]}></Sort>
       </div>
     </React.Fragment>
 

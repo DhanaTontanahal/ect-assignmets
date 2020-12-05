@@ -11,21 +11,17 @@ const Sort = (props) => {
         setSortedData([...result]);
     }, [dataToSort]);
 
-    const sortByName = () => {
-        const result = sorter(props.options , ["name"] );
+  
+    const sortBy = () => {
+        const result = sorter(props.options , [ "-id"] );
         setSortedData([...result]);
     }
 
-    const sortById = () => {
-        const result = sorter(props.options , ["id"] );
+    const sortByAsc = () => {
+        const result = sorter(props.options , [ "id"] );
         setSortedData([...result]);
     }
-
-    const sortByPrice = () => {
-        const result = sorter(props.options , ["price"] );
-        setSortedData([...result]);
-    }
-
+    
     return (
         <React.Fragment>
             {
@@ -60,9 +56,8 @@ const Sort = (props) => {
                     </table>
                 })
             }
-            <button onClick={sortByName}>Sort by name</button>
-            <button onClick={sortById}>Sort by id</button>
-            <button onClick={sortByPrice}>Sort by price</button>
+             <button onClick={sortByAsc}>Sort ascending by id</button>
+            <button onClick={sortBy}>Sort descending by id</button>
         </React.Fragment>
     )
 }

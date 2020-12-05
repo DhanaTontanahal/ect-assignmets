@@ -1,5 +1,6 @@
 const sortBy = require("./sort-util");
 
+
 const stocks = [
     { id: 12, name: 'Tesla', dor: '1998-10-05', price: 1001 },
     { id: 123, name: 'IBM', dor: '1993-02-15', price: 1002 },
@@ -86,24 +87,24 @@ const expectedStocksResSortedByPrice=[{
     name: "Blake",
     price: 1007
   }];
-test("1.)sort and check ", () => {
+test("1.)sort and check the sorted result length ", () => {
     expect(sortedResult).toHaveLength(4);
 });
 
-test("2.)sort and check ", () => {
+test("2.)sort and check the number array", () => {
     expect(sortedResult).toEqual([1, 2, 3, 87]);
 });
 
-test("3.)sort and check ", () => {
+test("3.)sort and test for sorted first id value ", () => {
     expect(sortedStocksByIdResult[0].id).toEqual(expectedSortedStocksResById[0].id);
 });
 
-test("3.)sort and check ", () => {
+test("3.)sort and check for the third id value ", () => {
     expect(sortedStocksByIdResult[3].id).toEqual(expectedSortedStocksResById[3].id);
 });
 
 
-test("4.)sort and check ", () => {
+test("4.)sort by price and check the expected result ", () => {
     expect(sortedStocksByPriceResult).toEqual(expectedStocksResSortedByPrice);
 });
 
