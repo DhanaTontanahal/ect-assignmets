@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RepeaterComponent } from './repeater/repeater.component';
+import { CustomSortPipe } from './custom-sort.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RepeaterComponent
+    RepeaterComponent,
+    CustomSortPipe
   ],
   imports: [
     BrowserModule

@@ -1,2 +1,16 @@
 
 <app-repeater [option]='data'></app-repeater>
+<h3>Sorter:</h3>
+<div *ngFor="let stock of stocks | customSort:'asc':'id'">
+
+<table>
+ 
+  <tr>
+    <td> {{stock.id}} </td>
+    <td> {{stock.name}} </td>
+    <td>{{stock.price}} </td>
+  </tr>
+  
+</table>
+
+</div>
