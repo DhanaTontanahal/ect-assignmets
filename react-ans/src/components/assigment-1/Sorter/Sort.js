@@ -18,7 +18,22 @@ const Sort = (props) => {
     }
 
     const sortByAsc = () => {
-        const result = sorter(props.options , [ "id"] );
+        const result = sorter(props.options , [  "id"] );
+        setSortedData([...result]);
+    }
+
+    const sortAscByPrice = () => {
+        const result = sorter(props.options , [  "price"] );
+        setSortedData([...result]);
+    }
+
+    const sortDescByPrice = () => {
+        const result = sorter(props.options , [ "-price" ] );
+        setSortedData([...result]);
+    }
+    
+    const sortAscByPriceThenId = () => {
+        const result = sorter(props.options , [ "price", "id" ] );
         setSortedData([...result]);
     }
     
@@ -58,6 +73,9 @@ const Sort = (props) => {
             }
              <button onClick={sortByAsc}>Sort ascending by id</button>
             <button onClick={sortBy}>Sort descending by id</button>
+            <button onClick={sortDescByPrice}>Sort descending by price</button>
+            <button onClick={sortAscByPrice}>Sort ascending by price</button>
+            <button onClick={sortAscByPriceThenId}>Sort ascending by price,then id</button>
         </React.Fragment>
     )
 }
