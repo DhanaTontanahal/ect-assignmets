@@ -11,9 +11,12 @@ const App = () => {
     { id: 123, name: 'IBM', dor: '1993-02-15', price: 1002 },
     { id: 45, name: 'Google', dor: '1996-01-31', price: 1003 },
     { id: 67, name: 'Microsoft', dor: '1998-04-09', price: 1004 },
-    { id: 89, name: 'Amazon', dor: '1996-07-08', price: 1005 },
-    { id: 34, name: 'Facebook', dor: '1994-09-12', price: 1006 },
-    { id: 234, name: 'Blake', dor: '2000-01-01', price: 1007 }
+    { id: 580, name: 'Microsoft', dor: '1998-04-09', price: 1004 },
+    { id: 770, name: 'Microsoft', dor: '1998-04-09', price: 1004 },
+    { id: 670, name: 'Microsoft', dor: '1998-04-09', price: 1004 },
+    { id: 89, name: 'Amazon', dor: '1996-07-08', price: 1006 },
+    { id: 34, name: 'Facebook', dor: '1994-09-12', price: 1007 },
+    { id: 234, name: 'Blake', dor: '2000-01-01', price: 1008 }
 ];
 
   return (
@@ -24,7 +27,7 @@ const App = () => {
       </div>
       <div>
         <h4>Sorter </h4>
-        <Sorter options={stocks} by={"price"}></Sorter>
+        <Sorter options={stocks} by1={"price"} by2={"id"}></Sorter>
       </div>
     </React.Fragment>
 

@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 const Sorter = (props) => {
     const [sortedData, setSortedData] = useState([]);
     const dataToSort = props.options;
-    const sortByOption = props.by;
+    const sortByOption1 = props.by1;
+    const sortByOption2 = props.by2;
 
     useEffect(() => {
-        const result = dataToSort.sortBy(function (o) { return o[sortByOption] });
+        const result = dataToSort.sortBy(function (o) { return [o[sortByOption1], o[sortByOption2]] });
         setSortedData([...result]);
     }, [dataToSort]);
 
@@ -23,7 +24,8 @@ const Sorter = (props) => {
     }
 
     const sortByPrice = () => {
-        const resultByPrice = dataToSort.sortBy(function (o) { return o.price });
+       
+        const resultByPrice = dataToSort.sortBy(function (o) { return -o.price });
         setSortedData([...resultByPrice]);
     }
 
