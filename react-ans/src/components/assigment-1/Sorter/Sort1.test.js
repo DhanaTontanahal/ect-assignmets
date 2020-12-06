@@ -1,6 +1,4 @@
 const sortBy = require("./sort-util");
-
-
 const stocks = [
     { id: 12, name: 'Tesla', dor: '1998-10-05', price: 1001 },
     { id: 123, name: 'IBM', dor: '1993-02-15', price: 1002 },
