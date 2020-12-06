@@ -21,6 +21,13 @@ describe('Button component', () => {
         expect(wrapper.length).toBe(1);
     })
 
+})
 
+describe('Check prop types for Button component', () => {
+
+    
+    it('It should verify the prop types for button component', () => {
+        
+    })
 
 })
