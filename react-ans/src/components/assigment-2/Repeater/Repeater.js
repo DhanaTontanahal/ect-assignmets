@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 const Repeater = (props) => {
     return (
-        <div>
+        <div data-test="repeaterComponent"> 
             {
                 props.option.map((item) => {
-                    return <div key={item.id}>{item.name}</div>
+                    return <div data-test="repeaterItem" key={item.id}>{item.name}</div>
                 })
             }
         </div>
